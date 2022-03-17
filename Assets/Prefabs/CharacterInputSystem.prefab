@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6538732027428706739}
   - component: {fileID: 1722289863752331857}
   - component: {fileID: 8763338647060673650}
+  - component: {fileID: 1086953443099263188}
   m_Layer: 0
   m_Name: CharacterInputSystem
   m_TagString: Untagged
@@ -74,7 +75,19 @@ MonoBehaviour:
     m_ActionId: 098160b1-66fc-4eb7-835f-491aa9ab8e77
     m_ActionName: Character/Move
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1086953443099263188}
+        m_TargetAssemblyTypeName: LocalAttack, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 222db9ab-8da1-457b-ab37-2c2dc6d67c34
     m_ActionName: Character/Attack
   - m_PersistentCalls:
@@ -107,3 +120,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _motion: {fileID: 0}
+--- !u!114 &1086953443099263188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6538732027428706736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d0bcdbcea95b94bb2d88c44d98e139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attack: {fileID: 0}
