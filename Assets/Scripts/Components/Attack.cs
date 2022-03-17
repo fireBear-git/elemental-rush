@@ -16,6 +16,7 @@ public enum AttackStatus
 public class Attack : MonoBehaviour
 {
     [SerializeField] private SelectedCharacter _selected;
+    [SerializeField] private Animator _animator;
 
     public AttackStatus status { get; private set; }
 
@@ -34,5 +35,11 @@ public class Attack : MonoBehaviour
     public void Done()
     {
         status = AttackStatus.hit;
+    }
+
+    public void Hit()
+    {
+        status = AttackStatus.trying;
+        _animator.SetTrigger(AttackStatus.trying.ToString());
     }
 }
