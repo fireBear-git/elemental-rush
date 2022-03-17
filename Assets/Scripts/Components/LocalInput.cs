@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Attack))]
+[RequireComponent(typeof(Motion))]
 [RequireComponent(typeof(PlayerInput))]
 public class LocalInput : MonoBehaviour
 {
@@ -35,5 +37,11 @@ public class LocalInput : MonoBehaviour
     {
         if (context.performed)
             _attack.Hit();
+    }
+
+    public void OnSpecialAttack(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            _attack.SpecialHit();
     }
 }
