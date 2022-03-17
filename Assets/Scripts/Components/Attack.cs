@@ -42,4 +42,10 @@ public class Attack : MonoBehaviour
         status = AttackStatus.trying;
         _animator.SetTrigger(AttackStatus.trying.ToString());
     }
+
+    public void SpecialHit()
+    {
+        status = AttackStatus.trying;
+        _animator.SetTrigger($"special_{AttackStatus.trying}");
+    }
 }
