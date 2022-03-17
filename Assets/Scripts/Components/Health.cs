@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Attack))]
+[RequireComponent(typeof(Rigidbody))]
 public class Health : MonoBehaviour
 {
     [Header("for tests only")]
@@ -25,7 +26,11 @@ public class Health : MonoBehaviour
         if (_myAttack.status == AttackStatus.trying)
             return;
 
+        if (other.gameObject.isStatic)
+            return;
+
         _enemyAttack ??= other.GetComponent<Attack>();
+        
         TakeHit();
     }
 

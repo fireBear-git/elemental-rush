@@ -11,6 +11,7 @@ public enum AttackStatus
     hit
 }
 
+[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(SelectedCharacter))]
 public class Attack : MonoBehaviour
 {
