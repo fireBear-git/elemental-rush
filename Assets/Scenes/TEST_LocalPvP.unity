@@ -448,17 +448,9 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2651274125410001730, guid: 55319a5146ad30e4c8a17f1bc54a815b, type: 3}
-      propertyPath: m_Constraints
-      value: 120
-      objectReference: {fileID: 0}
     - target: {fileID: 6306518834931940579, guid: 55319a5146ad30e4c8a17f1bc54a815b, type: 3}
       propertyPath: m_Name
       value: TEST_LocalCharacter
-      objectReference: {fileID: 0}
-    - target: {fileID: 7546262581738287678, guid: 55319a5146ad30e4c8a17f1bc54a815b, type: 3}
-      propertyPath: m_SkinWidth
-      value: 0.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55319a5146ad30e4c8a17f1bc54a815b, type: 3}
