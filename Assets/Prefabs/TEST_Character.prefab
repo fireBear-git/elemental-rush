@@ -282,9 +282,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e6ec1fffb63dc54b9d1818cb26517c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 10
   _smoothTime: 0.3
-  _controller: {fileID: 7051770880330142015}
   _selectedCharacter: {fileID: 415758614441934763}
+  _controller: {fileID: 7051770880330142015}
 --- !u!54 &3291689684692877379
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -316,6 +317,6 @@ CharacterController:
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
