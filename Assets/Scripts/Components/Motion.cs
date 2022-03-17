@@ -7,16 +7,18 @@ using UnityEngine;
 public class Motion : MonoBehaviour
 {
     [Header("Fields")]
+    [SerializeField] private float _speed = 5f;
     [SerializeField] private float _smoothTime = 0.03f;
 
     [Header("Components")]
     [SerializeField] private SelectedCharacter _selectedCharacter;
     [SerializeField] private CharacterController _controller;
 
-    public float directionSmoothed => _dirVector.x;
+    private Vector3 _rawDirection = Vector3.zero;
+    private Vector3 _direction = Vector3.zero;
+    private Vector3 _velocity = Vector3.zero;
 
-    private Vector3 _dirVector = Vector3.zero;
-    private Vector3 _dirVelocity = Vector3.zero;
+    public float direction { get; private set; }
 
     private void Reset()
     {
@@ -26,13 +28,10 @@ public class Motion : MonoBehaviour
 
     private void Update()
     {
-        if (directionSmoothed != 0)
-            _controller.Move(_dirVector * Time.deltaTime);
+        _rawDirection = Vector3.right * direction * _speed * _selectedCharacter.actualProperties.Dexterity;
+        _direction = Vector3.SmoothDamp(_direction, _rawDirection, ref _velocity, _smoothTime);
+        _controller.SimpleMove(_direction);
     }
 
-    public void SetDirection(float direction)
-    {
-        Vector3 target = Vector3.right * direction * _selectedCharacter.actualProperties.Dexterity;
-        _dirVector = Vector3.SmoothDamp(_dirVector, target, ref _dirVelocity, _smoothTime);
-    }
+    public void SetDirection(float direction) => this.direction = direction;
 }
