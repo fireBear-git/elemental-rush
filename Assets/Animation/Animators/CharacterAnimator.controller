@@ -24,7 +24,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
-  m_BlendParameter: defense
+  m_BlendParameter: defence
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
@@ -97,10 +97,10 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.25
-  m_HasExitTime: 1
+  m_TransitionDuration: 0.0047986433
+  m_TransitionOffset: 0.0026529431
+  m_ExitTime: 0.25795886
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -114,7 +114,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: defense
+    m_ConditionEvent: defence
     m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3206999886844042986}
@@ -184,7 +184,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: defense
+  - m_Name: defence
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -215,7 +215,7 @@ AnimatorStateTransition:
     m_ConditionEvent: special_trying
     m_EventTreshold: 0
   - m_ConditionMode: 4
-    m_ConditionEvent: defense
+    m_ConditionEvent: defence
     m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3921161420289936442}
@@ -262,7 +262,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: defense
+    m_ConditionEvent: defence
     m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3206999886844042986}
@@ -290,7 +290,7 @@ AnimatorStateTransition:
     m_ConditionEvent: trying
     m_EventTreshold: 0
   - m_ConditionMode: 4
-    m_ConditionEvent: defense
+    m_ConditionEvent: defence
     m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3137563012209976665}
