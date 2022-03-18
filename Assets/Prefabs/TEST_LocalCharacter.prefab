@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 4356536065923772728}
   - component: {fileID: 1023392700132329834}
   - component: {fileID: 417581284811158471}
-  - component: {fileID: 1025575785103453346}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -192,25 +191,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &1025575785103453346
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4461313112118715827}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: aa9a6b2d19b121b47806b5b9e321b22c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6836491590819454946
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +208,7 @@ GameObject:
   - component: {fileID: 3291689684692877379}
   - component: {fileID: 7051770880330142015}
   - component: {fileID: 980862140148410097}
+  - component: {fileID: 8261687215939781515}
   m_Layer: 0
   m_Name: TEST_LocalCharacter
   m_TagString: Untagged
@@ -264,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptable: {fileID: 11400000, guid: ede8349e34882984fa02865288216b54, type: 2}
-  _animator: {fileID: 1025575785103453346}
+  _animator: {fileID: 8261687215939781515}
   _characterId: TEST
 --- !u!114 &1296520725037572124
 MonoBehaviour:
@@ -293,6 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxAmount: 10
   _myAttack: {fileID: 1296520725037572124}
+  _selected: {fileID: 0}
 --- !u!114 &6811572645563888702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,10 +431,29 @@ MonoBehaviour:
     m_ActionName: Character/Defense[/Keyboard/v]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 43b7f199-1986-4a0f-b164-da9347a38321
-    m_ActionName: Character/Jump[/Keyboard/b]
+    m_ActionId: 1f623477-ae15-4fc3-8e4f-e6d3f17c64fd
+    m_ActionName: Character/Roll[/Keyboard/z]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Character
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &8261687215939781515
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836491590819454946}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa9a6b2d19b121b47806b5b9e321b22c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
