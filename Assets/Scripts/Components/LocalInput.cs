@@ -56,7 +56,7 @@ public class LocalInput : MonoBehaviour
 
     public void OnRoll(InputAction.CallbackContext context)
     {
-        //if(context.performed)
-        //    _motion.Jump();
+        if (context.performed)
+            _defence.Roll();
     }
 }
