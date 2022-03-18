@@ -21,6 +21,7 @@ public class Defence : MonoBehaviour
         if (_defenseValue != _defensingTarget)
         {
             _defenseValue = Mathf.MoveTowards(_defenseValue, _defensingTarget, Time.deltaTime * 4);
+            _selected.SetFloat("defence", _defenseValue);
         }
     }
 
@@ -28,5 +29,10 @@ public class Defence : MonoBehaviour
     {
         isRaised = value;
         _defensingTarget = value ? 1f : 0f;
+    }
+
+    public void Roll()
+    {
+        _selected.SetTrigger("roll");
     }
 }
