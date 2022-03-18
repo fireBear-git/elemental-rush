@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Attack))]
 [RequireComponent(typeof(Motion))]
+[RequireComponent(typeof(Defence))]
 [RequireComponent(typeof(PlayerInput))]
 public class LocalInput : MonoBehaviour
 {
@@ -51,5 +52,11 @@ public class LocalInput : MonoBehaviour
     {
         if (!context.started)
             _defence.Raise(context.performed);
+    }
+
+    public void OnRoll(InputAction.CallbackContext context)
+    {
+        //if(context.performed)
+        //    _motion.Jump();
     }
 }

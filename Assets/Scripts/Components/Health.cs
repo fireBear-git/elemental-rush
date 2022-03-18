@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Attack))]
-[RequireComponent(typeof(SelectedCharacter))]
+[RequireComponent(typeof(Defence))]
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(SelectedCharacter))]
 public class Health : MonoBehaviour
 {
     [Header("for tests only")]
@@ -22,6 +23,7 @@ public class Health : MonoBehaviour
     private void Reset()
     {
         _myAttack ??= GetComponent<Attack>();
+        _defence ??= GetComponent<Defence>();
     }
 
     private void OnTriggerEnter(Collider other)

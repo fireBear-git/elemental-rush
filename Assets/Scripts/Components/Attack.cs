@@ -36,6 +36,7 @@ public class Attack : MonoBehaviour
         status = AttackStatus.trying;
         _selected.SetTrigger(AttackStatus.trying.ToString());
     }
+
     public void SpecialHit()
     {
 
