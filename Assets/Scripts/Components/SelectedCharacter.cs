@@ -16,11 +16,6 @@ public class SelectedCharacter : MonoBehaviour
 
     private bool _isBerserk;
 
-    private float _defenseValue;
-    private float _defensingTarget;
-
-    public bool isDefensing { get; private set; }
-
     public CharacterProperties actualProperties
     {
         get
@@ -37,23 +32,13 @@ public class SelectedCharacter : MonoBehaviour
         _character = scriptable?.GetCharacter(_characterId);
     }
 
-    private void Update()
-    {
-        if (_defenseValue != _defensingTarget)
-        {
-            _defenseValue = Mathf.MoveTowards(_defenseValue, _defensingTarget, Time.deltaTime * 4);
-            _animator.SetFloat("defense", _defenseValue);
-        }
-    }
-
     public void SetTrigger(string triggerName)
     {
         _animator.SetTrigger(triggerName);
     }
 
-    public void Defense(bool value)
+    public void SetFloat(string floatName, float value)
     {
-        isDefensing = value;
-        _defensingTarget = value ? 1f : 0f;
+        _animator.SetFloat(floatName, value);
     }
 }
