@@ -7,6 +7,8 @@ public class SelectedCharacter : MonoBehaviour
     [Header("Scriptable")]
     [SerializeField] private CharactersScriptable scriptable;
 
+    [SerializeField] private Animator _animator;
+
     [Header("for tests only")]
     [SerializeField] private string _characterId;
 
@@ -14,7 +16,41 @@ public class SelectedCharacter : MonoBehaviour
 
     private bool _isBerserk;
 
-    public CharacterProperties actualProperties => _isBerserk ? _character.mainProperties : _character.berserkProperties;
+    private float _defenseValue;
+    private float _defensingTarget;
 
-    void Awake() => _character = scriptable?.GetCharacter(_characterId);
+    public CharacterProperties actualProperties
+    {
+        get
+        {
+            if (_isBerserk)
+                return _character.mainProperties;
+            else
+                return _character.berserkProperties;
+        }
+    }
+
+    void Awake()
+    {
+        _character = scriptable?.GetCharacter(_characterId);
+    }
+
+    private void Update()
+    {
+        if (_defenseValue != _defensingTarget)
+        {
+            _defenseValue = Mathf.MoveTowards(_defenseValue, _defensingTarget, Time.deltaTime * 4);
+            _animator.SetFloat("defense", _defenseValue);
+        }
+    }
+
+    public void SetTrigger(string triggerName)
+    {
+        _animator.SetTrigger(triggerName);
+    }
+
+    public void Defense(bool value)
+    {
+        _defensingTarget = value ? 1f : 0f;
+    }
 }
