@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Attack))]
+[RequireComponent(typeof(Defence))]
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(SelectedCharacter))]
 public class Health : MonoBehaviour
 {
     [Header("for tests only")]
     [SerializeField] private float _maxAmount;
     [SerializeField] private Attack _myAttack;
+    [SerializeField] private Defence _defence;
+    [SerializeField] private SelectedCharacter _selected;
 
     private Attack _enemyAttack;
 
@@ -19,6 +23,7 @@ public class Health : MonoBehaviour
     private void Reset()
     {
         _myAttack ??= GetComponent<Attack>();
+        _defence ??= GetComponent<Defence>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +32,9 @@ public class Health : MonoBehaviour
             return;
 
         if (other.gameObject.isStatic)
+            return;
+
+        if (_defence.isRaised)
             return;
 
         _enemyAttack ??= other.GetComponent<Attack>();
