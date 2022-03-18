@@ -275,8 +275,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxAmount: 10
   _myAttack: {fileID: 1296520725037572124}
-  _defence: {fileID: 0}
-  _selected: {fileID: 0}
+  _defence: {fileID: 7763604279926553560}
+  _selected: {fileID: 415758614441934763}
 --- !u!114 &7763604279926553560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attack: {fileID: 1296520725037572124}
-  _defence: {fileID: 0}
+  _defence: {fileID: 7763604279926553560}
   _motion: {fileID: 6811572645563888702}
 --- !u!54 &3291689684692877379
 Rigidbody:
@@ -445,7 +445,19 @@ MonoBehaviour:
     m_ActionId: d977de49-7dfa-4c5e-8dc2-be69134bf12d
     m_ActionName: Character/Defense[/Keyboard/v]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7645316580254094565}
+        m_TargetAssemblyTypeName: LocalInput, Assembly-CSharp
+        m_MethodName: OnRoll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 1f623477-ae15-4fc3-8e4f-e6d3f17c64fd
     m_ActionName: Character/Roll[/Keyboard/z]
   m_NeverAutoSwitchControlSchemes: 0
