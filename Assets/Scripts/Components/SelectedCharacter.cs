@@ -19,6 +19,8 @@ public class SelectedCharacter : MonoBehaviour
     private float _defenseValue;
     private float _defensingTarget;
 
+    public bool isDefensing { get; private set; }
+
     public CharacterProperties actualProperties
     {
         get
@@ -51,6 +53,7 @@ public class SelectedCharacter : MonoBehaviour
 
     public void Defense(bool value)
     {
+        isDefensing = value;
         _defensingTarget = value ? 1f : 0f;
     }
 }
