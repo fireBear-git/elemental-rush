@@ -10,13 +10,13 @@ public class LocalInput : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private Attack _attack;
-    [SerializeField] private SelectedCharacter _selectedCharacter;
+    [SerializeField] private Defence _defence;
     [SerializeField] private Motion _motion;
 
     public void Reset()
     {
         _attack ??= GetComponent<Attack>();
-        _selectedCharacter ??= GetComponent<SelectedCharacter>();
+        _defence??= GetComponent<Defence>();
         _motion ??= GetComponent<Motion>();
     }
 
@@ -50,6 +50,6 @@ public class LocalInput : MonoBehaviour
     public void OnDefense(InputAction.CallbackContext context)
     {
         if (!context.started)
-            _selectedCharacter.Defense(context.performed);
+            _defence.Raise(context.performed);
     }
 }
