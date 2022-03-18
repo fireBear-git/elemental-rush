@@ -38,9 +38,9 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Jump",
+                    "name": "Roll",
                     "type": "Button",
-                    "id": "43b7f199-1986-4a0f-b164-da9347a38321",
+                    "id": "1f623477-ae15-4fc3-8e4f-e6d3f17c64fd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -192,23 +192,12 @@
                 },
                 {
                     "name": "",
-                    "id": "facde69c-0c08-48b3-b559-63b9dd4f0e08",
-                    "path": "<DualShockGamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Dualshock4",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "36f09cb6-dd2c-4857-b2f6-46c412c7ff33",
-                    "path": "<Keyboard>/b",
+                    "id": "a18efabd-5a24-4fea-a566-9abe794de047",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Jump",
+                    "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
