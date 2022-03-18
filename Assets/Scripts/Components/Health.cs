@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     [Header("for tests only")]
     [SerializeField] private float _maxAmount;
     [SerializeField] private Attack _myAttack;
+    [SerializeField] private Defence _defence;
     [SerializeField] private SelectedCharacter _selected;
 
     private Attack _enemyAttack;
@@ -31,7 +32,7 @@ public class Health : MonoBehaviour
         if (other.gameObject.isStatic)
             return;
 
-        if (_selected.isDefensing)
+        if (_defence.isRaised)
             return;
 
         _enemyAttack ??= other.GetComponent<Attack>();
