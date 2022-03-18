@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 415758614441934763}
   - component: {fileID: 1296520725037572124}
   - component: {fileID: 8083219283347751837}
+  - component: {fileID: 7763604279926553560}
   - component: {fileID: 6811572645563888702}
   - component: {fileID: 7645316580254094565}
   - component: {fileID: 3291689684692877379}
@@ -274,7 +275,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxAmount: 10
   _myAttack: {fileID: 1296520725037572124}
+  _defence: {fileID: 0}
   _selected: {fileID: 0}
+--- !u!114 &7763604279926553560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836491590819454946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff6cc0f04ca95f4aa42bd6bc63bbf7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selected: {fileID: 415758614441934763}
 --- !u!114 &6811572645563888702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attack: {fileID: 1296520725037572124}
-  _selectedCharacter: {fileID: 415758614441934763}
+  _defence: {fileID: 0}
   _motion: {fileID: 6811572645563888702}
 --- !u!54 &3291689684692877379
 Rigidbody:
