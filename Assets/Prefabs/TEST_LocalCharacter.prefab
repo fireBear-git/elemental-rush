@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptable: {fileID: 11400000, guid: ede8349e34882984fa02865288216b54, type: 2}
+  _animator: {fileID: 1025575785103453346}
   _characterId: TEST
 --- !u!114 &1296520725037572124
 MonoBehaviour:
@@ -278,7 +279,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selected: {fileID: 415758614441934763}
-  _animator: {fileID: 1025575785103453346}
 --- !u!114 &8083219283347751837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attack: {fileID: 1296520725037572124}
+  _selectedCharacter: {fileID: 415758614441934763}
   _motion: {fileID: 6811572645563888702}
 --- !u!54 &3291689684692877379
 Rigidbody:
@@ -431,7 +432,19 @@ MonoBehaviour:
     m_ActionId: 57f87f48-0664-460f-8c47-fcebdffde0bd
     m_ActionName: Character/SpecialAttack[/Keyboard/x]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7645316580254094565}
+        m_TargetAssemblyTypeName: LocalInput, Assembly-CSharp
+        m_MethodName: OnDefense
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d977de49-7dfa-4c5e-8dc2-be69134bf12d
     m_ActionName: Character/Defense[/Keyboard/v]
   - m_PersistentCalls:
