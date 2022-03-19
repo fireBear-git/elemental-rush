@@ -26,6 +26,11 @@ public class Health : MonoBehaviour
         _defence ??= GetComponent<Defence>();
     }
 
+    private void Start()
+    {
+        _actualAmount = _maxAmount;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (_myAttack.status == AttackStatus.trying)
@@ -37,8 +42,11 @@ public class Health : MonoBehaviour
         if (_defence.isRaised)
             return;
 
-        _enemyAttack ??= other.GetComponent<Attack>();
-        
+        _enemyAttack ??= other.GetComponentInParent<Attack>();
+
+        if (_enemyAttack.status != AttackStatus.trying)
+            return;
+
         TakeHit();
     }
 

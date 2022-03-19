@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SelectedCharacter))]
-[RequireComponent(typeof(CharacterController))]
 public class Motion : MonoBehaviour
 {
     [Header("Fields")]
@@ -12,7 +11,6 @@ public class Motion : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private SelectedCharacter _selectedCharacter;
-    [SerializeField] private CharacterController _controller;
 
     private Vector3 _rawDirection = Vector3.zero;
     private Vector3 _direction = Vector3.zero;
@@ -23,14 +21,13 @@ public class Motion : MonoBehaviour
     private void Reset()
     {
         _selectedCharacter ??= GetComponent<SelectedCharacter>();
-        _controller = GetComponent<CharacterController>() ?? gameObject.AddComponent<CharacterController>();
     }
 
     private void Update()
     {
         _rawDirection = Vector3.right * direction * _speed * _selectedCharacter.actualProperties.Dexterity;
         _direction = Vector3.SmoothDamp(_direction, _rawDirection, ref _velocity, _smoothTime);
-        _controller.SimpleMove(_direction);
+        transform.Translate(_direction * Time.deltaTime);
     }
 
     public void SetDirection(float direction) => this.direction = direction;
