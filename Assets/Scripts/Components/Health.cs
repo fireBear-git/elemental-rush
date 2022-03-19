@@ -43,7 +43,10 @@ public class Health : MonoBehaviour
             return;
 
         _enemyAttack ??= other.GetComponentInParent<Attack>();
-        
+
+        if (_enemyAttack.status != AttackStatus.trying)
+            return;
+
         TakeHit();
     }
 
