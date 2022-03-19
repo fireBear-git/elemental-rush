@@ -70,7 +70,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Keyboard",
+                    "name": "FirstOnKeyboard",
                     "id": "9c9a28dc-a1ac-404e-99a6-bddf81fff0da",
                     "path": "1DAxis",
                     "interactions": "",
@@ -86,7 +86,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "FirstOnKeyboard",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -97,7 +97,40 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "FirstOnKeyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "SecondOnKeyboard",
+                    "id": "a29a584d-bedd-420f-ad3a-a3228cb61ce9",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "d955e0b1-39fa-4ce2-90b2-87d60f29783c",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SecondOnKeyboard",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "a2c942c8-333b-4c22-a9f7-cd55ed41a0ec",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SecondOnKeyboard",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -119,30 +152,19 @@
                     "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "FirstOnKeyboard",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "cbc97e06-6244-4109-b0f1-8d48f730b92f",
-                    "path": "<DualShockGamepad>/buttonNorth",
+                    "id": "08412e7d-8c90-4966-ad6c-c2e838b77cd3",
+                    "path": "<Keyboard>/n",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Dualshock4",
-                    "action": "SpecialAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d1130920-a81a-4ff9-a9ec-1844dfd8f14d",
-                    "path": "<Keyboard>/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "SpecialAttack",
+                    "groups": "SecondOnKeyboard",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -182,10 +204,21 @@
                 {
                     "name": "",
                     "id": "685fb7f7-a592-4a61-ade6-a7e8bbfeba00",
-                    "path": "<Keyboard>/v",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "FirstOnKeyboard",
+                    "action": "Defense",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7457da85-fdd9-4419-ae4d-35de96b22f02",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SecondOnKeyboard",
                     "action": "Defense",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -193,11 +226,33 @@
                 {
                     "name": "",
                     "id": "a18efabd-5a24-4fea-a566-9abe794de047",
-                    "path": "<Keyboard>/z",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "FirstOnKeyboard",
                     "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "34a213c0-60e8-424f-95f0-5dd3ab1d3bcd",
+                    "path": "<Keyboard>/u",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SecondOnKeyboard",
+                    "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c24faee-a309-43c9-be58-45c602fa4c06",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SecondOnKeyboard",
+                    "action": "SpecialAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -217,8 +272,19 @@
             ]
         },
         {
-            "name": "Keyboard",
-            "bindingGroup": "Keyboard",
+            "name": "FirstOnKeyboard",
+            "bindingGroup": "FirstOnKeyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "SecondOnKeyboard",
+            "bindingGroup": "SecondOnKeyboard",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
