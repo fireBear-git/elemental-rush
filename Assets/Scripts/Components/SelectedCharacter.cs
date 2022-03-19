@@ -14,16 +14,16 @@ public class SelectedCharacter : MonoBehaviour
 
     private Character _character;
 
-    private bool _isBerserk;
+    private bool _isBerserk = false;
 
     public CharacterProperties actualProperties
     {
         get
         {
             if (_isBerserk)
-                return _character.mainProperties;
-            else
                 return _character.berserkProperties;
+            else
+                return _character.mainProperties;
         }
     }
 
