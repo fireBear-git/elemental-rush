@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SelectedCharacter))]
-[RequireComponent(typeof(CharacterController))]
 public class Motion : MonoBehaviour
 {
     [Header("Fields")]
