@@ -144,9 +144,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2108159525557009779, guid: a9064e76a9b35e542913b08158439779, type: 3}
+      propertyPath: _updateHealthAction
+      value: 
+      objectReference: {fileID: 11400000, guid: 3727f50c621ace84cbab23e2cc8b1d37, type: 2}
+    - target: {fileID: 2108159525557009779, guid: a9064e76a9b35e542913b08158439779, type: 3}
       propertyPath: _presenterScriptable
       value: 
       objectReference: {fileID: 11400000, guid: 3727f50c621ace84cbab23e2cc8b1d37, type: 2}
+    - target: {fileID: 2108159525557009779, guid: a9064e76a9b35e542913b08158439779, type: 3}
+      propertyPath: _updateSpecialAction
+      value: 
+      objectReference: {fileID: 11400000, guid: d114208970f607a47af491475494daae, type: 2}
     - target: {fileID: 2108159525557009779, guid: a9064e76a9b35e542913b08158439779, type: 3}
       propertyPath: _healthUpdateScriptable
       value: 
