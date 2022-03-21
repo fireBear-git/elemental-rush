@@ -12,15 +12,18 @@ public class CharacterStats : MonoBehaviour
 
     [Header("Scriptables Dipendencies")]
     [SerializeField] private ScriptableActionFloat _updateHealthAction;
+    [SerializeField] private ScriptableActionFloat _updateSpecialAction;
         
     private void OnEnable()
     {
         _updateHealthAction?.AddListener(UpdateLife);
+        _updateSpecialAction?.AddListener(UpdateSpecial);
     }
 
     private void OnDisable()
     {
         _updateHealthAction?.RemoveListener(UpdateLife);
+        _updateSpecialAction?.RemoveListener(UpdateSpecial);
     }
 
     public void UpdateLife(float amount)
