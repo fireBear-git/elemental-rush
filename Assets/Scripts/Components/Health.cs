@@ -8,17 +8,20 @@ using UnityEngine;
 [RequireComponent(typeof(SelectedCharacter))]
 public class Health : MonoBehaviour
 {
-    [Header("for tests only")]
+    [Header("Fields")]
     [SerializeField] private float _maxAmount;
+
+    [Header("Components")]
     [SerializeField] private Attack _myAttack;
     [SerializeField] private Defence _defence;
     [SerializeField] private SelectedCharacter _selected;
 
+    [Header("Scriptables")]
+    [SerializeField] private ScriptableActionFloat _interfaceActions;
+
     private Attack _enemyAttack;
 
     private float _actualAmount;
-
-    public float amount => _actualAmount / _maxAmount;
 
     private void Reset()
     {
@@ -29,6 +32,7 @@ public class Health : MonoBehaviour
     private void Start()
     {
         _actualAmount = _maxAmount;
+        _interfaceActions?.Invoke(_actualAmount / _maxAmount);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,7 +58,7 @@ public class Health : MonoBehaviour
     {
         _actualAmount -= _enemyAttack.damage;
         _enemyAttack.Done();
-
-        //Animations & UI feedback
+        _interfaceActions?.Invoke(_actualAmount / _maxAmount);
+        //Animations
     }
 }
