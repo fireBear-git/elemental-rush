@@ -552,6 +552,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1296520725037572124, guid: 4430aabd3299ce54a9241909bc066b48, type: 3}
+      propertyPath: _maxFury
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296520725037572124, guid: 4430aabd3299ce54a9241909bc066b48, type: 3}
+      propertyPath: _specialAttackAction
+      value: 
+      objectReference: {fileID: 11400000, guid: d114208970f607a47af491475494daae, type: 2}
     - target: {fileID: 4461313112118715827, guid: 4430aabd3299ce54a9241909bc066b48, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -568,6 +576,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8083219283347751837, guid: 4430aabd3299ce54a9241909bc066b48, type: 3}
+      propertyPath: _interfaceActions
+      value: 
+      objectReference: {fileID: 11400000, guid: 3727f50c621ace84cbab23e2cc8b1d37, type: 2}
     - target: {fileID: 8083219283347751837, guid: 4430aabd3299ce54a9241909bc066b48, type: 3}
       propertyPath: _presenterScriptable
       value: 
@@ -1130,6 +1142,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1296520725037572124, guid: 4430aabd3299ce54a9241909bc066b48, type: 3}
+      propertyPath: _maxFury
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1296520725037572124, guid: 4430aabd3299ce54a9241909bc066b48, type: 3}
+      propertyPath: _specialAttackAction
+      value: 
+      objectReference: {fileID: 11400000, guid: 1cc5b1f11797d8f48a43bb2ffeb7fec7, type: 2}
     - target: {fileID: 4461313112118715827, guid: 4430aabd3299ce54a9241909bc066b48, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -1146,6 +1166,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8083219283347751837, guid: 4430aabd3299ce54a9241909bc066b48, type: 3}
+      propertyPath: _interfaceActions
+      value: 
+      objectReference: {fileID: 11400000, guid: b6fbf40ae0b8d734880a9dd8232c474c, type: 2}
     - target: {fileID: 8083219283347751837, guid: 4430aabd3299ce54a9241909bc066b48, type: 3}
       propertyPath: _presenterScriptable
       value: 
