@@ -119,6 +119,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1112265501584590763, guid: a9064e76a9b35e542913b08158439779, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1112265502671891102, guid: a9064e76a9b35e542913b08158439779, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -143,6 +147,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1752182603691861718, guid: a9064e76a9b35e542913b08158439779, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752182603691861718, guid: a9064e76a9b35e542913b08158439779, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2108159525557009779, guid: a9064e76a9b35e542913b08158439779, type: 3}
       propertyPath: _updateHealthAction
       value: 
@@ -159,5 +171,9 @@ PrefabInstance:
       propertyPath: _healthUpdateScriptable
       value: 
       objectReference: {fileID: 11400000, guid: 3727f50c621ace84cbab23e2cc8b1d37, type: 2}
+    - target: {fileID: 8222187342238875450, guid: a9064e76a9b35e542913b08158439779, type: 3}
+      propertyPath: _onHit
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e7b1ce761220f14a8b79d84450ddda7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9064e76a9b35e542913b08158439779, type: 3}

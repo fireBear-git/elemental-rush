@@ -159,6 +159,14 @@ PrefabInstance:
       propertyPath: m_FillOrigin
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1752182603691861718, guid: a9064e76a9b35e542913b08158439779, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1752182603691861718, guid: a9064e76a9b35e542913b08158439779, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 2108159525557009779, guid: a9064e76a9b35e542913b08158439779, type: 3}
       propertyPath: _updateHealthAction
       value: 
@@ -175,5 +183,13 @@ PrefabInstance:
       propertyPath: _healthUpdateScriptable
       value: 
       objectReference: {fileID: 11400000, guid: b6fbf40ae0b8d734880a9dd8232c474c, type: 2}
+    - target: {fileID: 4935002039595672314, guid: a9064e76a9b35e542913b08158439779, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8222187342238875450, guid: a9064e76a9b35e542913b08158439779, type: 3}
+      propertyPath: _onHit
+      value: 
+      objectReference: {fileID: 11400000, guid: c51f6ae6bf1327c499f5b6a6a9b7f5ca, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9064e76a9b35e542913b08158439779, type: 3}
