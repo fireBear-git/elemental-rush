@@ -25,6 +25,7 @@ public class Attack : MonoBehaviour
 
     [Header("Scriptables Actions")]
     [SerializeField] private ScriptableActionFloat _specialAttackAction;
+    [SerializeField] private ScriptableAction _onHitDone;
 
     private float _actualFury;
 
@@ -75,6 +76,7 @@ public class Attack : MonoBehaviour
             _actualFury += 0.2f;
         
         status = AttackStatus.hit;
+        _onHitDone?.Invoke();
         _specialAttackAction?.Invoke(_actualFury / _maxFury);
     }
 }
