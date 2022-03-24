@@ -67,12 +67,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 80
-    m_Alignment: 3
+    m_Alignment: 6
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -221,7 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee98a66f5ca96840bb51c941d0d22d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxComboOffset: 1.5
   _text: {fileID: 4935002039595672314}
   _onHit: {fileID: 0}
 --- !u!1 &1112265502671891101
