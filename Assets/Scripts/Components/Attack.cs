@@ -82,4 +82,10 @@ public class Attack : MonoBehaviour
         _onHitDone?.Invoke();
         _specialAttackAction?.Invoke(_actualFury / _maxFury);
     }
+
+
+    public void SpecialDone()
+    {
+        status = AttackStatus.still;
+    }
 }
