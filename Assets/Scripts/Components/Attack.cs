@@ -54,10 +54,15 @@ public class Attack : MonoBehaviour
 
     #endregion
 
+    private void SetAnimatorByStatus()
+    {
+        _selected.SetTrigger(status.ToString());
+    }
+
     public void Hit()
     {
         status = AttackStatus.trying;
-        _selected.SetTrigger(AttackStatus.trying.ToString());
+        SetAnimatorByStatus();
     }
 
     public void SpecialHit()
@@ -66,7 +71,7 @@ public class Attack : MonoBehaviour
         {
             _actualFury--;
             status = AttackStatus.tryingSpecial;
-            _selected.SetTrigger($"special_{AttackStatus.trying}");
+            SetAnimatorByStatus();
             _specialAttackAction?.Invoke(_actualFury / _maxFury);
         }
     }
