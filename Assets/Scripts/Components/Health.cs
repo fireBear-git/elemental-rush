@@ -37,7 +37,7 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_myAttack.status == AttackStatus.trying)
+        if (_myAttack.status == AttackStatus.trying || _myAttack.status == AttackStatus.tryingSpecial)
             return;
 
         if (other.gameObject.isStatic)
@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
 
         _enemyAttack ??= other.GetComponentInParent<Attack>();
 
-        if (_enemyAttack.status != AttackStatus.trying)
+        if (_enemyAttack.status == AttackStatus.still)
             return;
 
         TakeHit();
