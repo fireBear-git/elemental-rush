@@ -14,15 +14,11 @@ public enum AttackStatus
 }
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(SelectedCharacter))]
-public class Attack : MonoBehaviour
+public class Attack : CharacterBehaviour
 {
     [Header("Fields")]
     [SerializeField] private float _maxFury = 4f;
     
-    [Header("Components")]
-    [SerializeField] private SelectedCharacter _selected;
-
     [Header("Scriptables Actions")]
     [SerializeField] private ScriptableActionFloat _specialAttackAction;
     [SerializeField] private ScriptableAction _onHitDone;
@@ -34,11 +30,6 @@ public class Attack : MonoBehaviour
     public float damage => _selected.actualProperties.strenght;
 
     #region Unity Callbacks
-    
-    private void Reset()
-    {
-        _selected ??= GetComponent<SelectedCharacter>();
-    }
 
     private void Start()
     {
