@@ -10,7 +10,7 @@ public enum AttackStatus
 
     tryingSpecial,
 
-    hit
+    done
 }
 
 [RequireComponent(typeof(Rigidbody))]
@@ -48,7 +48,8 @@ public class Attack : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        status = AttackStatus.still;
+        if(status == AttackStatus.done)
+            status = AttackStatus.still;
     }
 
     #endregion
@@ -73,9 +74,11 @@ public class Attack : MonoBehaviour
     public void Done()
     {
         if(status != AttackStatus.tryingSpecial)
+        {
             _actualFury += 0.2f;
+            status = AttackStatus.done;
+        }
         
-        status = AttackStatus.hit;
         _onHitDone?.Invoke();
         _specialAttackAction?.Invoke(_actualFury / _maxFury);
     }
