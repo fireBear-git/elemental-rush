@@ -172,7 +172,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: special_trying
+  - m_Name: tryingSpecial
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -212,7 +212,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: special_trying
+    m_ConditionEvent: tryingSpecial
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: defence
