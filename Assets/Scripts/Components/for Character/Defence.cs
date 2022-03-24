@@ -2,20 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Defence : MonoBehaviour
+public class Defence : CharacterBehaviour
 {
-    [SerializeField] private SelectedCharacter _selected;
-    
     private float _defenseValue;
     private float _defensingTarget;
 
     public bool isRaised { get; private set; }
-
-    void Reset()
-    {
-        _selected ??= GetComponent<SelectedCharacter>();
-    }
-
+    
     void Update()
     {
         if (_defenseValue != _defensingTarget)

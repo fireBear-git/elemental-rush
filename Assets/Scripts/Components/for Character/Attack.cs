@@ -10,19 +10,15 @@ public enum AttackStatus
 
     tryingSpecial,
 
-    hit
+    done
 }
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(SelectedCharacter))]
-public class Attack : MonoBehaviour
+public class Attack : CharacterBehaviour
 {
     [Header("Fields")]
     [SerializeField] private float _maxFury = 4f;
     
-    [Header("Components")]
-    [SerializeField] private SelectedCharacter _selected;
-
     [Header("Scriptables Actions")]
     [SerializeField] private ScriptableActionFloat _specialAttackAction;
     [SerializeField] private ScriptableAction _onHitDone;
@@ -34,11 +30,6 @@ public class Attack : MonoBehaviour
     public float damage => _selected.actualProperties.strenght;
 
     #region Unity Callbacks
-    
-    private void Reset()
-    {
-        _selected ??= GetComponent<SelectedCharacter>();
-    }
 
     private void Start()
     {
@@ -48,15 +39,21 @@ public class Attack : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        status = AttackStatus.still;
+        if(status == AttackStatus.done)
+            status = AttackStatus.still;
     }
 
     #endregion
 
+    private void SetAnimatorByStatus()
+    {
+        _selected.SetTrigger(status.ToString());
+    }
+
     public void Hit()
     {
         status = AttackStatus.trying;
-        _selected.SetTrigger(AttackStatus.trying.ToString());
+        SetAnimatorByStatus();
     }
 
     public void SpecialHit()
@@ -65,7 +62,7 @@ public class Attack : MonoBehaviour
         {
             _actualFury--;
             status = AttackStatus.tryingSpecial;
-            _selected.SetTrigger($"special_{AttackStatus.trying}");
+            SetAnimatorByStatus();
             _specialAttackAction?.Invoke(_actualFury / _maxFury);
         }
     }
@@ -73,10 +70,18 @@ public class Attack : MonoBehaviour
     public void Done()
     {
         if(status != AttackStatus.tryingSpecial)
+        {
             _actualFury += 0.2f;
+            status = AttackStatus.done;
+        }
         
-        status = AttackStatus.hit;
         _onHitDone?.Invoke();
         _specialAttackAction?.Invoke(_actualFury / _maxFury);
+    }
+
+
+    public void SpecialDone()
+    {
+        status = AttackStatus.still;
     }
 }

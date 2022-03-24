@@ -5,8 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Attack))]
 [RequireComponent(typeof(Defence))]
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(SelectedCharacter))]
-public class Health : MonoBehaviour
+public class Health : CharacterBehaviour
 {
     [Header("Fields")]
     [SerializeField] private float _maxAmount;
@@ -14,7 +13,6 @@ public class Health : MonoBehaviour
     [Header("Components")]
     [SerializeField] private Attack _myAttack;
     [SerializeField] private Defence _defence;
-    [SerializeField] private SelectedCharacter _selected;
 
     [Header("Scriptables")]
     [SerializeField] private ScriptableActionFloat _interfaceActions;
@@ -23,8 +21,9 @@ public class Health : MonoBehaviour
 
     private float _actualAmount;
 
-    private void Reset()
+    private new void Reset()
     {
+        base.Reset();
         _myAttack ??= GetComponent<Attack>();
         _defence ??= GetComponent<Defence>();
     }
@@ -37,7 +36,7 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_myAttack.status == AttackStatus.trying)
+        if (_myAttack.status == AttackStatus.trying || _myAttack.status == AttackStatus.tryingSpecial)
             return;
 
         if (other.gameObject.isStatic)
@@ -48,7 +47,7 @@ public class Health : MonoBehaviour
 
         _enemyAttack ??= other.GetComponentInParent<Attack>();
 
-        if (_enemyAttack.status != AttackStatus.trying)
+        if (_enemyAttack.status == AttackStatus.still)
             return;
 
         TakeHit();
@@ -59,6 +58,7 @@ public class Health : MonoBehaviour
         _actualAmount -= _enemyAttack.damage;
         _enemyAttack.Done();
         _interfaceActions?.Invoke(_actualAmount / _maxAmount);
+
         //Animations
     }
 }
