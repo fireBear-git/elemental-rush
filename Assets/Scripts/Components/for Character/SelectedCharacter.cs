@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class SelectedCharacter : MonoBehaviour
 {
-    [Header("Scriptable")]
-    [SerializeField] private CharactersScriptable scriptable;
-
+    [Header("Fields")]
     [SerializeField] private Animator _animator;
-
-    [Header("for tests only")]
     [SerializeField] private string _characterId;
+
+    [Header("Data")]
+    [SerializeField] private CharactersScriptable _characters;
+
+    [Header("Events")]
+    [SerializeField] private ScriptableAction _gameOver;
 
     private Character _character;
 
@@ -27,10 +29,24 @@ public class SelectedCharacter : MonoBehaviour
         }
     }
 
+    #region Unity Callbacks
+
     void Awake()
     {
-        _character = scriptable?.GetCharacter(_characterId);
+        _character = _characters?.GetCharacter(_characterId);
     }
+
+    private void OnEnable()
+    {
+        _gameOver?.AddListener(DisableAllCharacterBehaviour);
+    }
+
+    private void OnDisable()
+    {
+        _gameOver?.RemoveListener(DisableAllCharacterBehaviour);
+    }
+
+    #endregion
 
     public void SetTrigger(string triggerName)
     {
@@ -40,5 +56,15 @@ public class SelectedCharacter : MonoBehaviour
     public void SetFloat(string floatName, float value)
     {
         _animator.SetFloat(floatName, value);
+    }
+
+    private void DisableAllCharacterBehaviour()
+    {
+        CharacterBehaviour[] behaviours = GetComponents<CharacterBehaviour>();
+
+        for(int i = 0; i < behaviours.Length; i++)
+        {
+            behaviours[i].enabled = false;
+        }
     }
 }
