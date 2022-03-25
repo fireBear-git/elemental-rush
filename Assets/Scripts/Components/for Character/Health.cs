@@ -14,8 +14,11 @@ public class Health : CharacterBehaviour
     [SerializeField] private Attack _myAttack;
     [SerializeField] private Defence _defence;
 
-    [Header("Scriptables")]
-    [SerializeField] private ScriptableActionFloat _interfaceActions;
+    [Header("Actions")]
+    [SerializeField] private ScriptableActionFloat _amountChanged;
+    [SerializeField] private ScriptableActionString _winningCharacter;
+    [SerializeField] private ScriptableAction _reloadGameScene;
+
 
     private Attack _enemyAttack;
 
@@ -31,7 +34,7 @@ public class Health : CharacterBehaviour
     private void Start()
     {
         _actualAmount = _maxAmount;
-        _interfaceActions?.Invoke(_actualAmount / _maxAmount);
+        _amountChanged?.Invoke(_actualAmount / _maxAmount);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,7 +60,14 @@ public class Health : CharacterBehaviour
     {
         _actualAmount -= _enemyAttack.damage;
         _enemyAttack.Done();
-        _interfaceActions?.Invoke(_actualAmount / _maxAmount);
+        _amountChanged?.Invoke(_actualAmount / _maxAmount);
+
+        if (_actualAmount <= 0)
+        {
+            _winningCharacter?.Invoke(_enemyAttack.name);
+            _reloadGameScene?.Invoke();
+        }
+
 
         //Animations
     }
