@@ -244,9 +244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 449fe8864bbc335498b37721e9fce9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptable: {fileID: 11400000, guid: ede8349e34882984fa02865288216b54, type: 2}
   _animator: {fileID: 8261687215939781515}
   _characterId: TEST
+  _characters: {fileID: 11400000, guid: ede8349e34882984fa02865288216b54, type: 2}
+  _gameOver: {fileID: 0}
 --- !u!114 &1296520725037572124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +261,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selected: {fileID: 415758614441934763}
+  _maxFury: 4
+  _specialAttackAction: {fileID: 0}
+  _onHitDone: {fileID: 0}
 --- !u!114 &8083219283347751837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,10 +276,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebe85e796fb7b14b98b8f9008ede729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selected: {fileID: 415758614441934763}
   _maxAmount: 100
   _myAttack: {fileID: 1296520725037572124}
   _defence: {fileID: 7763604279926553560}
-  _selected: {fileID: 415758614441934763}
+  _amountChanged: {fileID: 0}
+  _winningCharacter: {fileID: 11400000, guid: 7ff96d55620b37f47a876f2a0c7daee2, type: 2}
+  _reloadGameScene: {fileID: 11400000, guid: 9ee97d8f5357b5c459bae43efdf9f8fe, type: 2}
 --- !u!114 &7763604279926553560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,9 +308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e6ec1fffb63dc54b9d1818cb26517c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
-  _smoothTime: 0.3
-  _selectedCharacter: {fileID: 415758614441934763}
+  _selected: {fileID: 415758614441934763}
+  _speed: 5
+  _smoothTime: 0.03
 --- !u!114 &7645316580254094565
 MonoBehaviour:
   m_ObjectHideFlags: 0
