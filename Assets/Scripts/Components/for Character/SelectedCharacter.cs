@@ -12,7 +12,7 @@ public class SelectedCharacter : MonoBehaviour
     [SerializeField] private CharactersScriptable _characters;
 
     [Header("Events")]
-    [SerializeField] private ScriptableAction _gameOver;
+    [SerializeField] private ScriptableAction _matchOver;
 
     private Character _character;
 
@@ -38,12 +38,12 @@ public class SelectedCharacter : MonoBehaviour
 
     private void OnEnable()
     {
-        _gameOver?.AddListener(DisableAllCharacterBehaviour);
+        _matchOver?.AddListener(DisableAllCharacterBehaviour);
     }
 
     private void OnDisable()
     {
-        _gameOver?.RemoveListener(DisableAllCharacterBehaviour);
+        _matchOver?.RemoveListener(DisableAllCharacterBehaviour);
     }
 
     #endregion
