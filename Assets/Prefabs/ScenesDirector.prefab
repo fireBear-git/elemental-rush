@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reloadOffset: 2.5
-  _reloadGameScene: {fileID: 11400000, guid: 9ee97d8f5357b5c459bae43efdf9f8fe, type: 2}
-  _gameOver: {fileID: 11400000, guid: b024e40ce0368dd418f7d552fe7ac02f, type: 2}
+  _onDefeat: {fileID: 11400000, guid: 9ee97d8f5357b5c459bae43efdf9f8fe, type: 2}
+  _matchOver: {fileID: 11400000, guid: b024e40ce0368dd418f7d552fe7ac02f, type: 2}
