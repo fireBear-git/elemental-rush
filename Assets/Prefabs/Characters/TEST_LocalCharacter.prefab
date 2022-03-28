@@ -247,7 +247,7 @@ MonoBehaviour:
   _animator: {fileID: 8261687215939781515}
   _characterId: TEST
   _characters: {fileID: 11400000, guid: ede8349e34882984fa02865288216b54, type: 2}
-  _gameOver: {fileID: 11400000, guid: b024e40ce0368dd418f7d552fe7ac02f, type: 2}
+  _matchOver: {fileID: 11400000, guid: b024e40ce0368dd418f7d552fe7ac02f, type: 2}
 --- !u!114 &1296520725037572124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +282,7 @@ MonoBehaviour:
   _defence: {fileID: 7763604279926553560}
   _amountChanged: {fileID: 0}
   _winningCharacter: {fileID: 11400000, guid: 7ff96d55620b37f47a876f2a0c7daee2, type: 2}
-  _reloadGameScene: {fileID: 11400000, guid: 9ee97d8f5357b5c459bae43efdf9f8fe, type: 2}
+  _onDefeat: {fileID: 11400000, guid: 9ee97d8f5357b5c459bae43efdf9f8fe, type: 2}
 --- !u!114 &7763604279926553560
 MonoBehaviour:
   m_ObjectHideFlags: 0
