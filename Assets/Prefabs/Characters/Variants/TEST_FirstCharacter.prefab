@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1330979213393811531, guid: 3af67a90a16aed34bb0636fb024e5e26, type: 3}
+      propertyPath: _amountChanged
+      value: 
+      objectReference: {fileID: 11400000, guid: 3727f50c621ace84cbab23e2cc8b1d37, type: 2}
     - target: {fileID: 4374635121467098164, guid: 3af67a90a16aed34bb0636fb024e5e26, type: 3}
       propertyPath: m_Name
       value: TEST_FirstCharacter
@@ -59,5 +63,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8335003116949240778, guid: 3af67a90a16aed34bb0636fb024e5e26, type: 3}
+      propertyPath: _onHitDone
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e7b1ce761220f14a8b79d84450ddda7, type: 2}
+    - target: {fileID: 8335003116949240778, guid: 3af67a90a16aed34bb0636fb024e5e26, type: 3}
+      propertyPath: _specialAttackAction
+      value: 
+      objectReference: {fileID: 11400000, guid: d114208970f607a47af491475494daae, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3af67a90a16aed34bb0636fb024e5e26, type: 3}
