@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Attack))]
-[RequireComponent(typeof(Motion))]
-[RequireComponent(typeof(Defence))]
 [RequireComponent(typeof(PlayerInput))]
-public class LocalInput : MonoBehaviour
+public class LocalActions : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private Attack _attack;
@@ -16,9 +13,9 @@ public class LocalInput : MonoBehaviour
 
     public void Reset()
     {
-        _attack ??= GetComponent<Attack>();
-        _defence??= GetComponent<Defence>();
-        _motion ??= GetComponent<Motion>();
+        _attack ??= GetComponentInParent<Attack>();
+        _defence ??= GetComponentInParent<Defence>();
+        _motion ??= GetComponentInParent<Motion>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -39,24 +36,24 @@ public class LocalInput : MonoBehaviour
     public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
-            _attack.Hit();
+            _attack?.Hit();
     }
 
     public void OnSpecialAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
-            _attack.SpecialHit();
+            _attack?.SpecialHit();
     }
 
     public void OnDefense(InputAction.CallbackContext context)
     {
         if (!context.started)
-            _defence.Raise(context.performed);
+            _defence?.Raise(context.performed);
     }
 
     public void OnRoll(InputAction.CallbackContext context)
     {
         if (context.performed)
-            _defence.Roll();
+            _defence?.Roll();
     }
 }

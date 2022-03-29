@@ -17,7 +17,6 @@ public class Health : CharacterBehaviour
     [Header("Actions")]
     [SerializeField] private ScriptableActionFloat _amountChanged;
     [SerializeField] private ScriptableActionString _winningCharacter;
-    [SerializeField] private ScriptableAction _reloadGameScene;
 
 
     private Attack _enemyAttack;
@@ -63,11 +62,7 @@ public class Health : CharacterBehaviour
         _amountChanged?.Invoke(_actualAmount / _maxAmount);
 
         if (_actualAmount <= 0)
-        {
             _winningCharacter?.Invoke(_enemyAttack.name);
-            _reloadGameScene?.Invoke();
-        }
-
 
         //Animations
     }
