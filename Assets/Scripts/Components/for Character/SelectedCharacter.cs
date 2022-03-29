@@ -7,6 +7,8 @@ public class SelectedCharacter : MonoBehaviour
     [Header("Fields")]
     [SerializeField] private Animator _animator;
     [SerializeField] private string _characterId;
+    [SerializeField] private GameObject Inputs;
+
 
     [Header("Data")]
     [SerializeField] private CharactersScriptable _characters;
@@ -61,6 +63,7 @@ public class SelectedCharacter : MonoBehaviour
     private void DisableAllCharacterBehaviour()
     {
         CharacterBehaviour[] behaviours = GetComponents<CharacterBehaviour>();
+        Inputs.SetActive(false);
 
         for(int i = 0; i < behaviours.Length; i++)
         {
