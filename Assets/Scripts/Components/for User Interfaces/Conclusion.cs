@@ -10,10 +10,11 @@ public class Conclusion : MonoBehaviour
     [SerializeField] private Text _text;
 
     [Header("Events")]
-    [SerializeField] private ScriptableActionString _winningCharacter;
+    [SerializeField] private ScriptableActionString _matchWinner;
+    [SerializeField] private ScriptableActionString _battleWinner;
 
     #region Unity Callbacks
-    
+
     private void Reset()
     {
         _text ??= GetComponentInChildren<Text>();
@@ -26,12 +27,14 @@ public class Conclusion : MonoBehaviour
 
     private void OnEnable()
     {
-        _winningCharacter?.AddListener(SetWinner);
+        _matchWinner?.AddListener(MatchWinner);
+        _battleWinner?.AddListener(BattleWinner);
     }
 
     private void OnDisable()
     {
-        _winningCharacter?.RemoveListener(SetWinner);
+        _matchWinner?.RemoveListener(MatchWinner);
+        _battleWinner?.RemoveListener(BattleWinner);
     } 
 
     #endregion
@@ -41,9 +44,15 @@ public class Conclusion : MonoBehaviour
         _text.gameObject.SetActive(value);
     }
 
-    public void SetWinner(string winner)
+    public void MatchWinner(string winner)
     {
-        _text.text = $"{winner} wins";
+        _text.text = $"{winner} wins this match";
+        SetTextActive(true);
+    }
+
+    public void BattleWinner(string winner)
+    {
+        _text.text = $"{winner} wins the battle";
         SetTextActive(true);
     }
 }
