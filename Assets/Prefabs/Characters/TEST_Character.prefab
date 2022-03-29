@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selected: {fileID: 415758614441934763}
-  _maxAmount: 10
+  _maxAmount: 50
   _myAttack: {fileID: 1296520725037572124}
   _defence: {fileID: 7763604279926553560}
   _amountChanged: {fileID: 0}
