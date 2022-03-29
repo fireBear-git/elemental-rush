@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8250030639097387185}
-  - component: {fileID: 8250030639097387186}
+  - component: {fileID: 7036989956955332395}
   m_Layer: 0
   m_Name: ScenesDirector
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8250030639097387186
+--- !u!114 &7036989956955332395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,5 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reloadOffset: 2.5
-  _onDefeat: {fileID: 11400000, guid: 9ee97d8f5357b5c459bae43efdf9f8fe, type: 2}
-  _matchOver: {fileID: 11400000, guid: b024e40ce0368dd418f7d552fe7ac02f, type: 2}
+  _reloadMatch: {fileID: 11400000, guid: 9ee97d8f5357b5c459bae43efdf9f8fe, type: 2}
