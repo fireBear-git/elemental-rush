@@ -9,8 +9,7 @@ public class ScenesDirector : MonoBehaviour
     [SerializeField] private float _reloadOffset;
 
     [Header("Actions")]
-    [SerializeField] private ScriptableAction _onDefeat;
-    [SerializeField] private ScriptableAction _matchOver;
+    [SerializeField] private ScriptableAction _reloadMatch;
 
     private static bool loaded = false;
 
@@ -30,25 +29,24 @@ public class ScenesDirector : MonoBehaviour
 
     private void OnEnable()
     {
-        _onDefeat?.AddListener(MatchOver);
+        _reloadMatch?.AddListener(reloadMatch);
     }
 
     private void OnDisable()
     {
-        _onDefeat?.RemoveListener(MatchOver);
+        _reloadMatch?.RemoveListener(reloadMatch);
     }
 
     #endregion
 
-    private IEnumerator ReloadMatch()
+    private IEnumerator reloadSceneAfterSeconds()
     {
-        _matchOver?.Invoke();
         yield return new WaitForSeconds(_reloadOffset);
         SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
 
-    private void MatchOver()
+    private void reloadMatch()
     {
-        StartCoroutine(ReloadMatch());
+        StartCoroutine(reloadSceneAfterSeconds());
     }
 }
