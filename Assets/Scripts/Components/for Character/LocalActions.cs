@@ -10,9 +10,11 @@ public class LocalActions : MonoBehaviour
     [SerializeField] private Attack _attack;
     [SerializeField] private Defence _defence;
     [SerializeField] private Motion _motion;
+    [SerializeField] private SelectedCharacter _selected;
 
     public void Reset()
     {
+        _selected ??= GetComponentInParent<SelectedCharacter>();
         _attack ??= GetComponentInParent<Attack>();
         _defence ??= GetComponentInParent<Defence>();
         _motion ??= GetComponentInParent<Motion>();
@@ -55,5 +57,11 @@ public class LocalActions : MonoBehaviour
     {
         if (context.performed)
             _defence?.Roll();
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            _selected.Pause();
     }
 }
