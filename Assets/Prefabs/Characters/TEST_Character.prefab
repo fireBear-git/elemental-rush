@@ -247,6 +247,7 @@ MonoBehaviour:
   Inputs: {fileID: 0}
   _characters: {fileID: 11400000, guid: ede8349e34882984fa02865288216b54, type: 2}
   _matchOver: {fileID: 11400000, guid: b024e40ce0368dd418f7d552fe7ac02f, type: 2}
+  _onPause: {fileID: 11400000, guid: e93a5f247c208cc44b9570d60ea43342, type: 2}
 --- !u!114 &1296520725037572124
 MonoBehaviour:
   m_ObjectHideFlags: 0

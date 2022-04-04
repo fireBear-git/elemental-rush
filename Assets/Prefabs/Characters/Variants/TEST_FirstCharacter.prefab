@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TEST_FirstCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 6898405449933225573, guid: 3af67a90a16aed34bb0636fb024e5e26, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7081830062641607010, guid: 3af67a90a16aed34bb0636fb024e5e26, type: 3}
       propertyPath: m_DefaultControlScheme
       value: FirstOnKeyboard
@@ -62,6 +66,10 @@ PrefabInstance:
     - target: {fileID: 7915060721992434733, guid: 3af67a90a16aed34bb0636fb024e5e26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963778228877571646, guid: 3af67a90a16aed34bb0636fb024e5e26, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8335003116949240778, guid: 3af67a90a16aed34bb0636fb024e5e26, type: 3}
       propertyPath: _onHitDone
