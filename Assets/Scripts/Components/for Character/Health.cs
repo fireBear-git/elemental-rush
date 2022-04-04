@@ -18,10 +18,10 @@ public class Health : CharacterBehaviour
     [SerializeField] private ScriptableActionFloat _amountChanged;
     [SerializeField] private ScriptableActionString _winningCharacter;
 
-
+    private float _actualAmount;
     private Attack _enemyAttack;
 
-    private float _actualAmount;
+    private static bool? _matchOver = null;
 
     private new void Reset()
     {
@@ -32,12 +32,16 @@ public class Health : CharacterBehaviour
 
     private void Start()
     {
+        _matchOver = false;
         _actualAmount = _maxAmount;
         _amountChanged?.Invoke(_actualAmount / _maxAmount);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (_matchOver == true)
+            return;
+
         if (_myAttack.status == AttackStatus.trying || _myAttack.status == AttackStatus.tryingSpecial)
             return;
 
@@ -51,7 +55,7 @@ public class Health : CharacterBehaviour
 
         if (_enemyAttack.status == AttackStatus.still)
             return;
-
+        
         TakeHit();
     }
 
@@ -62,7 +66,10 @@ public class Health : CharacterBehaviour
         _amountChanged?.Invoke(_actualAmount / _maxAmount);
 
         if (_actualAmount <= 0)
+        {
+            _matchOver = true;
             _winningCharacter?.Invoke(_enemyAttack.name);
+        }
 
         //Animations
     }
