@@ -5,16 +5,16 @@ using UnityEngine;
 public class SelectedCharacter : MonoBehaviour
 {
     [Header("Fields")]
-    [SerializeField] private Animator _animator;
     [SerializeField] private string _characterId;
+    [SerializeField] private Animator _animator;
     [SerializeField] private GameObject Inputs;
-
 
     [Header("Data")]
     [SerializeField] private CharactersScriptable _characters;
 
     [Header("Events")]
     [SerializeField] private ScriptableAction _matchOver;
+    [SerializeField] private ScriptableAction _onPause;
 
     private Character _character;
 
@@ -69,5 +69,10 @@ public class SelectedCharacter : MonoBehaviour
         {
             behaviours[i].enabled = false;
         }
+    }
+
+    public void Pause()
+    {
+        _onPause?.Invoke();
     }
 }
