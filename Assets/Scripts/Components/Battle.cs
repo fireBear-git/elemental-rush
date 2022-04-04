@@ -23,6 +23,8 @@ public class Battle : MonoBehaviour
 
     private int _minforWin => (_maxWins / 2) + 1;
 
+    public static bool isOver = false;
+
     public static bool loaded = false;
 
     #region Unity Callbacks
@@ -63,6 +65,7 @@ public class Battle : MonoBehaviour
 
         if (actualWins == _minforWin)
         {
+            isOver = true;
             _battleWinner.Invoke(winner);
             return;
         }
