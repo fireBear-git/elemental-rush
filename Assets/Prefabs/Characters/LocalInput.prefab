@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb74157005d36b74182df96725b72d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selected: {fileID: 0}
   _attack: {fileID: 0}
   _defence: {fileID: 0}
   _motion: {fileID: 0}
@@ -176,6 +177,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1f623477-ae15-4fc3-8e4f-e6d3f17c64fd
     m_ActionName: Character/Roll[/Keyboard/e,/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8142024774442786246}
+        m_TargetAssemblyTypeName: LocalActions, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2e194b69-e8a5-415f-864a-72ee9f73af2e
+    m_ActionName: Character/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Character
